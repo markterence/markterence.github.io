@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            margin-top: 20px;
+        }
+        .footer a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+    </style>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const dirs = [
+                {
+                    "keycode": "mkv71hOn",
+                    "domain": "firefly.example.com",
+                }
+            ];
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const fromCode = urlParams.get('f');
+
+            if (fromCode) {
+                const match = dirs.find(dir => dir.keycode === fromCode);
+                if (match) {
+                    document.getElementById('domain').textContent = match.domain;
+                }
+            }
+        });
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Access Denied</h1>
+        <p>If you have been redirected to this page from <strong id="domain">my domain</strong> and you need access, please contact me.</p>
+        <div class="footer">
+            <p><a href="https://github.com/markterence">https://github.com/markterence</a></p>
+        </div>
+    </div>
+</body>
+</html>
